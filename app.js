@@ -5,7 +5,7 @@ app.get("/api", (req,res) => {
     const {slack_name, track} = req.query;
     // console.log(slack_name)
     const current_day = new Date().toLocaleString('en-US', { weekday: 'long' });
-    const current_time_utc = new Date().toISOString();
+    const current_time_utc = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z'); // Format UTC time
     
     const github_file_url = "https://github.com/olurocks/HNGX/blob/main/app.js"
     const github_repo_url = "https://github.com/olurocks/HNGX.git"
