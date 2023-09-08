@@ -3,12 +3,12 @@ const app = express()
 
 app.get("/endpoint", (req,res) => {
     const {slack_name, track} = req.query;
-    console.log(slack_name)
+    // console.log(slack_name)
     const current_day = new Date().toLocaleString('en-US', { weekday: 'long' });
     const current_time_utc = new Date().toISOString();
     
-    const github_file_url = ""
-    const github_repo_url = ""
+    const github_file_url = "https://github.com/olurocks/HNGX/blob/main/app.js"
+    const github_repo_url = "https://github.com/olurocks/HNGX.git"
 
     const response = {
         slack_name : slack_name,
